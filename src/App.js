@@ -1,5 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import data from './data.js'
+
+// Challenge 2: Use set and push each object category
+const categories = new Set();
+data.map(obj => categories.add(obj.category));
+
 
 function App() {
   return (
