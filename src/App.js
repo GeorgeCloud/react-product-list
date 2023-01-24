@@ -1,31 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import data from './data.js'
 
-// Challenge 2: Use set and push each object category
-const allCategories = data.map(obj => obj.category)
-
-// Challenge 3: Use set and push each object category
-const categories = new Set();
-data.map(obj => categories.add(obj.category));
-
-// Challenge 4: Dicationary -- { categoryName: count }
-const categoryCount = allCategories.reduce((obj, cat) => {
-  if (obj.hasOwnProperty(cat)){
-    obj[cat] += 1;
-  } else {
-    obj[cat] = 0;
-  }
-  return obj
-}, {});
-
-// Challenge 5: Dicationary -- { name: categoryName, count: count }
-const categoriesArray = Array.from(categories);
-const categoryAndCount = categoriesArray.reduce((obj, cat) => {
-  obj.push({name: cat, count: categoryCount[cat]})
-  return obj
-}, [])
-
+// Challenge 7
+import data, { allCategories, categoriesSet, categoriesAndCount } from './data'
 
 function App() {
   return (
