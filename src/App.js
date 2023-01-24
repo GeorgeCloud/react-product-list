@@ -9,7 +9,7 @@ const allCategories = data.map(obj => obj.category)
 const categories = new Set();
 data.map(obj => categories.add(obj.category));
 
-// Challenge 4: Dicationary with category count
+// Challenge 4: Dicationary -- { categoryName: count }
 const categoryCount = allCategories.reduce((obj, cat) => {
   if (obj.hasOwnProperty(cat)){
     obj[cat] += 1;
@@ -17,7 +17,15 @@ const categoryCount = allCategories.reduce((obj, cat) => {
     obj[cat] = 0;
   }
   return obj
-}, {})
+}, {});
+
+// Challenge 5: Dicationary -- { name: categoryName, count: count }
+const categoriesArray = Array.from(categories);
+const categoryAndCount = categoriesArray.reduce((obj, cat) => {
+  obj.push({name: cat, count: categoryCount[cat]})
+  return obj
+}, [])
+
 
 function App() {
   return (
