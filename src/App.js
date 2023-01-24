@@ -15,12 +15,29 @@ function App() {
       <div className="categoryButtons">
         {categoriesAndCount.map(obj => {
           return(
-            <button key={obj.name}>
+            <button>
               {obj.name}
                 <span> {obj.count} </span>
             </button>
           )
         })}
+      </div>
+
+      <div className="products">
+        {data.map(obj => {
+            return (
+              <div>
+                <h2>{ obj.name }</h2>
+                <p>{ obj.price }</p>
+                <p>
+                  <small>
+                    Category: <u>{ obj.category }</u> Rating: <u>{ obj.rating }</u>
+                  </small>
+                </p>
+              </div>
+            )
+        })}
+
       </div>
     </div>
   );

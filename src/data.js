@@ -1,6 +1,6 @@
 import data from './data.json'
 
-// Challenge 2: Use set and push each object category
+// Challenge 2: list of all categories
 const allCategories = data.map(obj => obj.category)
 
 // Challenge 3: Use set and push each object category
