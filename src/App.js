@@ -5,22 +5,23 @@ import './App.css';
 import data, { allCategories, categoriesSet, categoriesAndCount } from './data'
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Product List</h1>
+      <p>Count: {data.length}</p>
+      <p>Category Count: {categoriesSet.size}</p>
+
+      <div className="categoryButtons">
+        {categoriesAndCount.map(obj => {
+          return(
+            <button key={obj.name}>
+              {obj.name}
+                <span> {obj.count} </span>
+            </button>
+          )
+        })}
+      </div>
     </div>
   );
 }
