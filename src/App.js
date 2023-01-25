@@ -8,7 +8,7 @@ import Header from './Header'
 import data, { allCategories, categoriesSet, categoriesAndCount } from './data'
 
 function App() {
-  const [category, setCategory] = useState('Music');
+  const [category, setCategory] = useState('Toys');
 
   return (
     <div className="App">
@@ -18,7 +18,9 @@ function App() {
         categoryCount={categoriesSet.size}
       />
 
-      <CategoryList category={ category } setCategory={ setCategory }/>
+      <CategoryList
+        category={ category }
+        catSelected={ newCategory => setCategory(newCategory) }/>
 
       <ProductList category={ category }/>
     </div>
