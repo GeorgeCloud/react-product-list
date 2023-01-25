@@ -1,21 +1,26 @@
 import './App.css';
+import { useState } from 'react'
 import ProductList from './ProductList'
-import CategoryButtons from './CategoryButtons'
+import CategoryList from './CategoryList'
+import Header from './Header'
 
 // Challenge 7
 import data, { allCategories, categoriesSet, categoriesAndCount } from './data'
 
 function App() {
+  const [category, setCategory] = useState('Music');
 
   return (
     <div className="App">
-      <h1>Product List</h1>
-      <p>Count: {data.length}</p>
-      <p>Category Count: {categoriesSet.size}</p>
+      <Header
+        title="Product List"
+        productCount={data.length}
+        categoryCount={categoriesSet.size}
+      />
 
-      <CategoryButtons />
+      <CategoryList category={ category } setCategory={ setCategory }/>
 
-      <ProductList />
+      <ProductList category={ category }/>
     </div>
   );
 }

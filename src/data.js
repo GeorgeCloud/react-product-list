@@ -12,7 +12,7 @@ const categoryCount = allCategories.reduce((obj, cat) => {
   if (obj.hasOwnProperty(cat)){
     obj[cat] += 1;
   } else {
-    obj[cat] = 0;
+    obj[cat] = 1;
   }
   return obj
 }, {});
