@@ -24,6 +24,8 @@ const categoriesAndCount = categoriesArray.reduce((obj, cat) => {
   return obj
 }, [])
 
+categoriesAndCount.push({ name: 'All', count: data.length })
+
 export default data
 
 // Challenge 6: Export all of the data

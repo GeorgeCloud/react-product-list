@@ -20,7 +20,7 @@ function App() {
 
       <CategoryList
         category={ category }
-        catSelected={ newCategory => setCategory(newCategory) }/>
+        onClick={ newCategory => setCategory(newCategory) }/>
 
       <ProductList category={ category }/>
     </div>
